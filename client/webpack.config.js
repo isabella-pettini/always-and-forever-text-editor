@@ -20,15 +20,17 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './index.html',
-        title: 'Always Forever Text Editor'
+        title: 'Text Editor'
       }),
       new InjectManifest({
         swSrc: './src-sw.js',
         swDest: 'src-sw.js'
       }),
       new WebpackPwaManifest({
+        fingerprints: false,
+        inject: true,
         name: 'Always Forever Text Editor',
-        short_name: 'Text Editor',
+        short_name: 'JATE',
         description: 'Just Another Text Editor!',
         background_color:'#225ca3',
         theme_color: '#225ca3',
